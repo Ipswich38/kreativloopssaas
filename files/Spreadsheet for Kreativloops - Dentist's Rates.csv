@@ -1,0 +1,44 @@
+DENTIST'S RATES,,
+,,Position
+Dentist Name,Dr. Clency Arias,Pediatric Dentist
+Commission,,
+for all services,40%,
+,,Position
+Dentist Name,Dr. Fevi Pio,General Dentist
+Basic per day,"1,800",
+"General Procedures (OP, resto, EXO, fluoride)",15%,
+RCT/Surgery/Prostho,20%,
+Odontec Referral,5%,
+Xray (per shot),50,
+,,Position
+Dentist Name,Dr. Shirley Bayog,Cosmetic/Aesthetic Dentist
+Basic per day,"1,500",
+"OP, resto, fluoride, EXO",10%,
+"Prostho (Crowns), Endo, Simple Surgery",20%,
+Referral Fee (TMJ & Surgery Cases),500,
+Xray (per shot),50,
+,,Position
+Dentist Name,Dr. Jerome Oh,Oral Surgeon/Endodontics Specialist
+Basic per day compensation structure,,
+If there is NO SURGERY performed & for REFERRALS,"1,500",
+If the procedure EXCEEDS 3 hours,750,
+For days with SURGICAL CASES charged at 35% & RCT and crowns,NO BASIC PAY,
+Commission,,
+OP & Resto,10%,
+Simple Extractions,15%,
+Surgical Cases (if Dr. Oh consulted),35%,
+Root Canal Treatment & Crowns (if Dr. Oh consulted),30%,
+"Referrals from associates (surgical cases, RCT, prostho)",25%,
+,,Position
+Dentist Name,Dr. Jonathan Pineda,TMJ Specialist
+for all services,50%,
+,,Position
+Dentist Name,Dr. Fatima Porciuncula,Orthodontics Specialist
+Basic per day (Ortho patients),"2,000",
+Basic per day (GP/HMO),"1,500",
+New ortho,20%,
+Old patient ortho,10%,
+All procedures if GP/HMO,10%,
+Dentures,20%,
+,,Position
+Dentist Name,Dr. Camila Cañares-Price,"Owner, General Dentist"
