@@ -1,6 +1,6 @@
 "use client"
 
-import { Sidebar } from '@/components/layout/sidebar'
+import { EnhancedSidebar } from '@/components/layout/enhanced-sidebar'
 import { Header } from '@/components/layout/header'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -39,14 +39,19 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Sidebar clinicName={user.clinic_name || 'Dental Clinic'} />
+    <div className="min-h-screen bg-gray-50 flex">
+      <EnhancedSidebar
+        clinicName={user.clinic_name || 'Happy Teeth Dental Clinic'}
+        userEmail={user.email}
+      />
 
-      <div className="lg:ml-64">
+      <div className="flex-1 flex flex-col transition-all duration-300 ease-in-out">
         <Header />
 
-        <main className="min-h-[calc(100vh-4rem)]">
-          {children}
+        <main className="flex-1 overflow-auto bg-gray-50">
+          <div className="p-4 lg:p-6">
+            {children}
+          </div>
         </main>
       </div>
     </div>

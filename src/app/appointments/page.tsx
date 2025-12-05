@@ -96,7 +96,7 @@ export default function AppointmentsPage() {
 
   if (showScheduler && selectedPatient) {
     return (
-      <div className="p-4 lg:p-6 space-y-6">
+      <div className="space-y-6">
         <div className="flex items-center justify-between">
           <Button
             variant="outline"
@@ -118,7 +118,7 @@ export default function AppointmentsPage() {
   }
 
   return (
-    <div className="p-4 lg:p-6 space-y-6">
+    <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
         <div>
