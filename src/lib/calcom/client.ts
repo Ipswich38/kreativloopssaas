@@ -14,9 +14,9 @@ export class CalcomClient {
   private clientSecret: string;
 
   constructor() {
-    this.baseUrl = calcomConfig.platformBaseUrl;
-    this.clientId = calcomConfig.clientId;
-    this.clientSecret = calcomConfig.clientSecret;
+    this.baseUrl = calcomConfig.platformBaseUrl || 'https://api.cal.com/api/platform/v1';
+    this.clientId = calcomConfig.clientId || '';
+    this.clientSecret = calcomConfig.clientSecret || '';
   }
 
   private async makeRequest<T>(

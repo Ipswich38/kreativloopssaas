@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { CalBookingWidget } from './cal-booking-widget';
+import { LiveCalBooking } from './live-cal-booking';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -56,10 +57,25 @@ export function AppointmentScheduler({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           {selectedTab === 'schedule' ? (
-            <CalBookingWidget
-              patient={patient}
-              onBookingComplete={handleBookingComplete}
-            />
+            <div className="space-y-4">
+              <LiveCalBooking
+                patient={patient}
+                onBookingComplete={handleBookingComplete}
+              />
+
+              {/* Fallback to original widget */}
+              <details className="border rounded-lg">
+                <summary className="p-4 cursor-pointer font-medium">
+                  Alternative Booking Widget (Demo)
+                </summary>
+                <div className="px-4 pb-4">
+                  <CalBookingWidget
+                    patient={patient}
+                    onBookingComplete={handleBookingComplete}
+                  />
+                </div>
+              </details>
+            </div>
           ) : (
             <Card>
               <CardHeader>
