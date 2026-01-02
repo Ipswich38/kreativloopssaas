@@ -87,13 +87,18 @@ const secondaryNavigation = [
     icon: PieChart,
     description: 'Analytics & reports',
     badge: null
-  },
+  }
+];
+
+// Hidden navigation - only visible to IT support
+const itSupportNavigation = [
   {
-    name: 'MCP Agents',
-    href: '/mcp',
+    name: 'MCP System',
+    href: '/admin/mcp',
     icon: Bot,
-    description: 'AI automation & agents',
-    badge: 'AI'
+    description: 'AI agents & system monitoring',
+    badge: 'ADMIN',
+    roles: ['it_support', 'super_admin']
   }
 ];
 
@@ -110,9 +115,10 @@ const bottomNavigation = [
 interface EnhancedSidebarProps {
   clinicName: string;
   userEmail?: string;
+  userRole?: 'super_admin' | 'clinic_admin' | 'dentist' | 'hygienist' | 'receptionist' | 'it_support' | 'patient';
 }
 
-export function EnhancedSidebar({ clinicName, userEmail }: EnhancedSidebarProps) {
+export function EnhancedSidebar({ clinicName, userEmail, userRole = 'dentist' }: EnhancedSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -324,6 +330,23 @@ export function EnhancedSidebar({ clinicName, userEmail }: EnhancedSidebarProps)
                   <NavItem key={item.name} item={item} section="secondary" />
                 ))}
               </div>
+
+              {/* IT Support Navigation - Only show for IT support and super admin */}
+              {(userRole === 'it_support' || userRole === 'super_admin') && (
+                <>
+                  <div className={cn('border-t border-gray-200', isCollapsed ? 'my-2' : 'my-6')} />
+                  <div className="space-y-1">
+                    {!isCollapsed && (
+                      <h3 className="px-3 text-xs font-medium text-red-500 uppercase tracking-wider mb-3">
+                        System Administration
+                      </h3>
+                    )}
+                    {itSupportNavigation.map((item) => (
+                      <NavItem key={item.name} item={item} section="admin" />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </nav>
 

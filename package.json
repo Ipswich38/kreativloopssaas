@@ -28,6 +28,7 @@
     "autoprefixer": "^10.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "crypto-js": "^4.2.0",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.0",
     "lucide-react": "^0.292.0",
@@ -44,6 +45,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/jest": "^29.5.8",
     "@types/node": "^20",
     "@types/react": "^18",
